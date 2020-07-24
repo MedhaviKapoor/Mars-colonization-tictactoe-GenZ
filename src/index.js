@@ -33,6 +33,18 @@ function drawWinningLine({ direction, row }) {
 	setTimeout(() => { board.className += ' full'; }, 50);
 }
 
+function openHint(hint) {
+	if (hint == null) return
+	hint.classList.add('active')
+	overlay.classList.add('active')
+}
+
+function closeHint(hint) {
+	if (hint == null) return
+	hint.classList.remove('active')
+	overlay.classList.remove('active')
+  }
+
 
 //Starts a new game with a certain depth and a starting_player of 1 if human is going to start, single player 
 function newGame(depth = -1, starting_player = 1, game_type = 1) {
@@ -193,3 +205,40 @@ document.addEventListener("DOMContentLoaded", event => {
 	});
 
 });
+
+const openHintButtons = document.querySelectorAll('[data-hint-target]')
+const closeHintButtons = document.querySelectorAll('[data-close-button]')
+const overlay = document.getElementById('overlay')
+
+openHintButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const hint = document.querySelector(button.dataset.hintTarget)
+    openHint(hint)
+  })
+});
+
+overlay.addEventListener('click', () => {
+  const hint = document.querySelectorAll('.hint.active')
+  hint.forEach(hint => {
+    closeHint(hint)
+  })
+});
+
+closeHintButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const hint = button.closest('.hint')
+    closeHint(hint)
+  })
+})
+
+function openHint(hint) {
+  if (hint == null) return
+  hint.classList.add('active')
+  overlay.classList.add('active')
+}
+
+function closeHint(hint) {
+  if (hint == null) return
+  hint.classList.remove('active')
+  overlay.classList.remove('active')
+}

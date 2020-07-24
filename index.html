@@ -75,6 +75,20 @@
 
 				<button id="newgame">New Game</button>
 				<p>Player <span id="player">X</span> your turn</p> 
+				<button data-hint-target="#hint">Hint</button>
+                <div class="hint" id="hint">
+                   <div class="hint-header">
+                         <div class="title">Hint for the next move</div>
+                         <button data-close-button class="close-button">&times;</button>
+                   </div>
+                   <div class="hint-body" id ="hint_for_human">
+					<ul>
+						<li data-value="1" class="active">Human</li>
+						<li data-value="0">Computer</li>
+					</ul>
+                   </div>
+                </div>
+                <div id="overlay"></div>
 				<p><a href="https://github.com/akanksha-sachan/Mars-colonization-tictactoe-GenZ.git">View on Github</a></p> 
 			</div> 
 		</div>

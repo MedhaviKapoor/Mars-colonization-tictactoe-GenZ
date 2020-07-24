@@ -19,10 +19,18 @@
     "node-sass": "^4.14.1",
     "sass-loader": "^5.0.1",
     "style-loader": "^0.13.2",
-    "webpack": "^2.7.0",
+    "webpack": "^2.2.0-rc.0",
     "webpack-dev-server": "^2.11.5"
   },
   "dependencies": {
     "normalize.css": "^8.0.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MedhaviKapoor/Mars-colonization-tictactoe-GenZ.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MedhaviKapoor/Mars-colonization-tictactoe-GenZ/issues"
+  },
+  "homepage": "https://github.com/MedhaviKapoor/Mars-colonization-tictactoe-GenZ#readme"
 }
